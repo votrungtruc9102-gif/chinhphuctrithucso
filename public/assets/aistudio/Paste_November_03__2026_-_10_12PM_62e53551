@@ -1,0 +1,1173 @@
+# PROMPT TỔNG THỂ: KHÔI PHỤC – NÂNG CẤP – HOÀN THIỆN 3 HỆ THỐNG TRÒ CHƠI HỌC TẬP WEBSITE THCS MỸ HÒA
+
+## I. VAI TRÒ VÀ MỤC TIÊU
+
+Bạn là chuyên gia Senior Full-stack Developer, chuyên sâu về React, TypeScript, Node.js, Backend, Database, Realtime, Game Development, Animation và UI/UX giáo dục.
+
+Hãy trực tiếp kiểm tra, chỉnh sửa, nâng cấp và hoàn thiện 3 hệ thống trò chơi trên website:
+
+**CHINH PHỤC TRI THỨC SỐ – HỆ SINH THÁI HỌC TẬP SỐ THÔNG MINH – THCS MỸ HÒA.**
+
+Ba trò chơi cần được hoàn thiện:
+
+1. Đấu Trường Trí Tuệ.
+2. Thể Dục Trí Tuệ.
+3. Giải Đố Hình Ảnh (Đoán Hình Ảnh).
+
+### Nguyên tắc bắt buộc
+
+- Không tạo website mới.
+- Không xóa các trò chơi cũ.
+- Không làm mất dữ liệu học sinh.
+- Không tự ý thay đổi giao diện tổng thể của website.
+- Không tạo người chơi ảo, tài khoản ảo hoặc thành tích giả.
+- Không chỉ tạo giao diện minh họa mà phải triển khai chức năng thực tế.
+- Tái sử dụng các component, API, database và dữ liệu hiện có.
+- Không tạo hai hệ thống tài khoản hoặc hai hệ thống điểm riêng biệt cho cùng một học sinh.
+- Tất cả trò chơi phải dùng chung hồ sơ học sinh, lớp học và hệ thống thống kê.
+- Không báo đã hoàn thành một chức năng nếu chức năng đó chưa được kiểm thử thực tế.
+
+Trước khi chỉnh sửa, hãy đọc toàn bộ mã nguồn hiện tại và lập danh sách các chức năng đã có, chức năng còn thiếu, chức năng đang lỗi và chức năng cần nâng cấp.
+
+---
+
+# PHẦN A. HỆ THỐNG ĐẤU TRƯỜNG TRÍ TUỆ
+
+## 1. Tổng quan giao diện
+
+Thiết kế khu vực Đấu Trường Trí Tuệ thành một hệ sinh thái trò chơi học tập có các khu vực:
+
+- Đấu trường PVP 1vs1 – Best of 5.
+- Đấu trường trí tuệ.
+- Săn Boss – 50 Đại Boss.
+- Chiến đấu tổ đội Co-op.
+- Thử thách Solo.
+- Danh sách dũng sĩ đang online.
+- Bảng xếp hạng chiến binh.
+- Hồ sơ chiến binh.
+- Kho tướng và vật phẩm.
+- Lịch sử chiến đấu.
+- Thành tích và phần thưởng.
+
+Giữ nguyên các chức năng đang hoạt động, chỉ sửa những phần bị lỗi hoặc chưa hoàn thiện.
+
+## 2. Hệ thống đăng ký tài khoản chiến binh
+
+Cho phép học sinh đăng ký chiến binh bằng thông tin:
+
+- Họ và tên.
+- Lớp học.
+- Tên tài khoản chiến binh.
+- Ảnh đại diện.
+- Tướng đồng hành ban đầu.
+
+Các lớp phải có đầy đủ:
+
+- 6A5.
+- 7A5.
+- 8A5.
+- 9A5.
+
+Yêu cầu:
+
+- Không bắt học sinh nhập mật khẩu riêng cho tài khoản chiến binh.
+- Nếu học sinh đã đăng nhập website thì liên kết tài khoản chiến binh với ID tài khoản website.
+- Nếu chưa đăng nhập, yêu cầu xác thực thông qua hệ thống tài khoản hoặc giáo viên phê duyệt.
+- Không cho phép giả mạo họ tên hoặc tài khoản của học sinh khác.
+- Không tạo tài khoản trùng lặp.
+- Không tự động sinh dữ liệu học sinh mẫu.
+- Một học sinh chỉ có một hồ sơ chiến binh chính thức.
+
+Tài khoản chiến binh phải được lưu vào cơ sở dữ liệu và có thể sử dụng trên nhiều thiết bị.
+
+## 3. Hệ thống 50 vị tướng
+
+Đây là chức năng quan trọng.
+
+Xây dựng thư viện gồm đúng 50 nhân vật để người chơi lựa chọn.
+
+Các nhân vật cần lấy cảm hứng từ:
+
+- Truyền thuyết Việt Nam.
+- Thần thoại Việt Nam.
+- Lịch sử Việt Nam.
+- Văn học Việt Nam.
+- Các nhân vật anh hùng dân tộc.
+- Các hình tượng thần thoại và huyền ảo phù hợp chương trình THCS.
+
+Mỗi tướng phải có:
+
+1. Hình ảnh đại diện riêng.
+2. Tên nhân vật.
+3. Danh hiệu.
+4. Cốt truyện.
+5. Hệ nguyên tố.
+6. Chỉ số HP.
+7. Chỉ số sức mạnh.
+8. Chỉ số phòng thủ.
+9. Tốc độ.
+10. Năng lượng.
+11. Ba kỹ năng chiến đấu.
+12. Một tuyệt kỹ tối thượng.
+
+Cho phép học sinh lựa chọn bất kỳ tướng nào trong 50 tướng ở:
+
+- PVP 1vs1.
+- Đấu trường.
+- Săn Boss.
+- Chiến đấu tổ đội.
+
+Không bắt buộc người chơi phải sử dụng tướng ban đầu.
+
+Hai người chơi được quyền chọn cùng một tướng hoặc hai tướng khác nhau.
+
+Không khóa lựa chọn của người chơi còn lại.
+
+Lưu tướng đang sử dụng vào hồ sơ chiến binh.
+
+## 4. Đấu trường PVP 1vs1 – Best of 5
+
+### 4.1. Khắc phục lỗi không truy cập được
+
+Hiện tại chức năng Đấu trường PVP 1vs1 từng gặp lỗi không thể vào được.
+
+Hãy kiểm tra toàn bộ:
+
+- Nút truy cập PVP.
+- Điều kiện mở màn hình.
+- Route điều hướng.
+- Component DauTruongTriTueGame.tsx.
+- PvpArenaMode.tsx.
+- Trạng thái đăng nhập.
+- Dữ liệu tài khoản chiến binh.
+- API phòng đấu.
+- Trạng thái trận đấu.
+- Lỗi render và lỗi JavaScript.
+
+Yêu cầu:
+
+Khi nhấn nút PVP 1vs1, người chơi phải vào được màn hình lựa chọn đối thủ hoặc phòng chờ.
+
+Không được xuất hiện màn hình trắng, lỗi không tìm thấy component hoặc nút bấm không có tác dụng.
+
+### 4.2. Tìm kiếm đối thủ
+
+Hiển thị danh sách học sinh thực tế đang online.
+
+Mỗi người chơi gồm:
+
+- Avatar.
+- Họ tên.
+- Lớp.
+- Tướng đang sử dụng.
+- Điểm RP.
+- Cấp độ.
+- Trạng thái trực tuyến.
+- Nút THÁCH ĐẤU.
+
+Có chức năng tìm kiếm theo tên và lớp.
+
+Không sử dụng tên người chơi mẫu.
+
+### 4.3. Gửi lời mời
+
+Khi nhấn THÁCH ĐẤU:
+
+- Gửi lời mời đến đúng tài khoản.
+- Hiển thị thông báo cho đối phương.
+- Có nút CHẤP NHẬN và TỪ CHỐI.
+- Có thời gian chờ.
+- Tự hủy lời mời nếu hết thời gian.
+- Không cho phép gửi lời mời đến chính mình.
+- Không cho phép tham gia hai trận cùng lúc.
+
+Khi đối phương chấp nhận, cả hai cùng được đưa vào một phòng đấu chung.
+
+### 4.4. Chọn tướng và đấu trường
+
+Hai người chơi được tự do chọn một trong 50 tướng.
+
+Giao diện gồm:
+
+- Người chơi A.
+- Người chơi B.
+- Khu vực lựa chọn tướng.
+- Thông tin kỹ năng.
+- Chỉ số sức mạnh.
+- Khu vực lựa chọn đấu trường.
+- Nút XÁC NHẬN.
+- Trạng thái SẴN SÀNG.
+
+Chỉ bắt đầu trận đấu khi cả hai đã xác nhận.
+
+### 4.5. Không gian chiến đấu
+
+Xây dựng không gian chiến đấu mang chủ đề kỳ ảo trong văn học Việt Nam.
+
+Các bối cảnh có thể gồm:
+
+- Sơn Tinh – Thủy Tinh.
+- Thánh Gióng.
+- Chử Đồng Tử.
+- Truyền thuyết Hồ Gươm.
+- Âu Cơ – Lạc Long Quân.
+- Cổ Loa huyền bí.
+- Thế giới thần tiên trong truyện cổ tích Việt Nam.
+
+Phong cách hình ảnh:
+
+- Fantasy 3D.
+- Kiến trúc và cảnh quan Việt Nam.
+- Hiệu ứng ánh sáng huyền ảo.
+- Màu sắc sống động.
+- Nhân vật có hiệu ứng kỹ năng riêng.
+- Không gian phù hợp học sinh THCS.
+
+Không sử dụng hình ảnh bạo lực máu me hoặc kinh dị.
+
+### 4.6. Cơ chế thi đấu
+
+Sử dụng thể thức Best of 5.
+
+Mỗi trận gồm 5 câu hỏi kiến thức.
+
+Hai người nhận cùng câu hỏi và cùng thời gian trả lời.
+
+Nội dung câu hỏi phù hợp chương trình lớp 6–9:
+
+- Toán.
+- Ngữ văn.
+- Tiếng Anh.
+- Khoa học tự nhiên.
+- Lịch sử.
+- Địa lí.
+- Tin học.
+- Giáo dục công dân.
+
+Quy tắc:
+
+- Trả lời đúng: nhận điểm.
+- Trả lời sai: không nhận điểm.
+- Hết thời gian: không nhận điểm.
+- Người có điểm cao hơn thắng lượt.
+- Người thắng ít nhất 3 trong 5 lượt sẽ thắng chung cuộc.
+
+Câu hỏi phải được lấy từ ngân hàng câu hỏi thực tế.
+
+Không cho phép người chơi tự chỉnh sửa điểm, đáp án hoặc kết quả.
+
+### 4.7. Kết quả
+
+Sau trận đấu hiển thị:
+
+- Người chiến thắng.
+- Người thua cuộc.
+- Tỷ số.
+- Số câu đúng.
+- Số câu sai.
+- RP nhận được.
+- EXP nhận được.
+- Danh hiệu.
+- Phần thưởng.
+
+Lưu lịch sử trận đấu vào hồ sơ của cả hai.
+
+## 5. Hệ thống 50 Đại Boss
+
+Xây dựng hệ thống gồm đúng 50 Boss, phân chia theo khối lớp và độ khó tăng dần.
+
+Các Boss phải được mở khóa theo tiến trình.
+
+Yêu cầu:
+
+- 50 Boss khác nhau.
+- Boss càng về sau càng mạnh.
+- Mỗi Boss có hình ảnh riêng.
+- Mỗi Boss có tên và cốt truyện riêng.
+- Có HP, phòng thủ, kỹ năng và điểm yếu.
+- Có nhiều giai đoạn chiến đấu.
+- Có câu hỏi kiến thức để gây sát thương.
+- Có phần thưởng riêng.
+- Có điều kiện mở khóa.
+
+### 5.1. Chỉ số Boss
+
+HP tối đa: 150.000.
+
+Không được vượt giới hạn này.
+
+Phân bổ HP tăng dần theo cấp độ Boss.
+
+Boss cuối phải mạnh hơn rõ rệt so với Boss đầu tiên.
+
+Mỗi Boss có:
+
+- HP hiện tại.
+- HP tối đa.
+- Thanh máu.
+- Phần trăm máu.
+- Lượng sát thương đã nhận.
+- Trạng thái chiến đấu.
+- Cấp độ.
+- Kỹ năng.
+- Phần thưởng.
+
+### 5.2. Cơ chế chiến đấu Boss
+
+Chia thành 3 giai đoạn:
+
+Giai đoạn 1 – Toàn sức mạnh:
+
+- Boss sử dụng kỹ năng cơ bản.
+- Người chơi trả lời câu hỏi để gây sát thương.
+
+Giai đoạn 2 – Cuồng nộ:
+
+- Khi HP xuống dưới 70%.
+- Boss thay đổi hiệu ứng.
+- Mở khóa kỹ năng mới.
+- Tăng độ khó câu hỏi.
+
+Giai đoạn 3 – Tuyệt diệt:
+
+- Khi HP xuống dưới 30%.
+- Boss sử dụng tuyệt kỹ.
+- Đội phải vượt qua thử thách cuối cùng.
+
+Khi HP Boss bằng 0, đội chiến thắng.
+
+### 5.3. Tổ đội săn Boss
+
+Yêu cầu bắt buộc:
+
+- Mỗi đội phải có ít nhất 3 người.
+- Có thể mở rộng tối đa 10 người.
+- Tất cả người chơi phải là tài khoản học sinh thực.
+- Không tạo người chơi ảo.
+- Không tự thêm thành viên để đủ số lượng.
+- Không cho phép một người giả lập nhiều thành viên trong cùng đội.
+
+Các chức năng:
+
+- Tạo phòng.
+- Tham gia phòng.
+- Mời bạn bè.
+- Rời phòng.
+- Chọn tướng.
+- Xác nhận sẵn sàng.
+- Bắt đầu chiến đấu.
+
+Khi chưa đủ 3 người, không cho phép bắt đầu trận đánh Boss.
+
+Hiển thị thông báo số người còn thiếu.
+
+### 5.4. Tiến trình mở khóa
+
+Có tổng cộng 50 Boss.
+
+Boss càng về sau càng khó.
+
+Chiến thắng Boss trước để mở khóa Boss tiếp theo theo quy tắc của từng chặng.
+
+Lưu tiến trình vào tài khoản.
+
+Không được mở khóa sai hoặc mất tiến trình khi tải lại trang.
+
+Không nhận phần thưởng trùng lặp khi đánh lại Boss.
+
+**Lưu ý về dữ liệu:** Tài liệu hiện tại đã có danh sách chi tiết 30 Boss. Hãy bảo toàn nguyên vẹn 30 Boss này và bổ sung 20 Boss mới với dữ liệu đầy đủ. Không xóa hoặc tự ý đổi tên các Boss đã có. Trước khi bổ sung, kiểm tra danh sách thực tế trong arenaBosses.ts.
+
+## 6. Thử thách Solo
+
+Giữ nguyên và hoàn thiện chức năng Solo.
+
+Hỗ trợ 4 mức độ:
+
+- Dễ.
+- Trung bình.
+- Khó.
+- Đặc biệt.
+
+Mỗi mức độ có ngân hàng câu hỏi và phần thưởng phù hợp.
+
+Có hệ thống:
+
+- Chọn nhiệm vụ.
+- Bắt đầu.
+- Trả lời.
+- Chấm điểm.
+- Hoàn thành.
+- Nhận thưởng.
+
+Kết quả phải được gửi về backend và lưu vào tài khoản.
+
+## 7. Hệ thống online và bảng xếp hạng
+
+Tích hợp Presence Service cho toàn website.
+
+Chỉ tính học sinh thật đang hoạt động.
+
+Hiển thị:
+
+- Avatar.
+- Họ tên.
+- Lớp.
+- Tướng.
+- RP.
+- Trạng thái online.
+
+Sử dụng heartbeat hoặc WebSocket.
+
+Không sử dụng localStorage để giả lập trạng thái online giữa các máy tính.
+
+Bảng xếp hạng phải lấy dữ liệu thật.
+
+Không ghi cố định số người online.
+
+Không tự tạo điểm RP, EXP hoặc thành tích.
+
+## 8. Hồ sơ chiến binh
+
+Mỗi học sinh có một hồ sơ duy nhất.
+
+Gồm:
+
+- Avatar.
+- Họ tên.
+- Lớp.
+- Tướng đang sử dụng.
+- Cấp độ.
+- RP.
+- EXP.
+- Vàng.
+- Danh hiệu.
+- Huy hiệu.
+- Số trận PVP.
+- Số trận thắng.
+- Số trận thua.
+- Số Boss đã tiêu diệt.
+- Số nhiệm vụ Solo hoàn thành.
+- Lịch sử chiến đấu.
+- Vật phẩm đã sở hữu.
+
+Không cho phép học sinh tự sửa điểm RP, EXP, Vàng hoặc thành tích.
+
+## 9. Quản lý dành cho giáo viên
+
+Tạo khu vực quản lý Đấu Trường Trí Tuệ.
+
+Giáo viên được phân quyền có thể:
+
+- Quản lý tài khoản chiến binh.
+- Duyệt tài khoản.
+- Khóa hoặc mở khóa tài khoản.
+- Quản lý danh sách tướng.
+- Quản lý Boss.
+- Chỉnh sửa HP Boss.
+- Chỉnh sửa phần thưởng.
+- Quản lý câu hỏi.
+- Xem lịch sử thi đấu.
+- Theo dõi tiến trình học sinh.
+- Kiểm tra dữ liệu RP và EXP.
+
+Mọi thao tác phải được kiểm tra quyền truy cập ở backend.
+
+---
+
+# PHẦN B. HỆ THỐNG THỂ DỤC TRÍ TUỆ
+
+## 1. Mục tiêu trò chơi
+
+Xây dựng trò chơi kết hợp kiến thức và vận động.
+
+Khi học sinh trả lời đúng câu hỏi, nhân vật thực hiện một động tác thể dục tương ứng.
+
+Phải có chuyển động tự nhiên, giống con người.
+
+Không chỉ xoay hoặc lắc toàn thân.
+
+## 2. Nhân vật vận động
+
+Hỗ trợ:
+
+- Nhân vật học sinh nam.
+- Nhân vật học sinh nữ.
+
+Trang phục thể dục học đường phù hợp học sinh THCS.
+
+Giữ nguyên nhân vật hiện tại nếu đã có.
+
+Không tự ý thay đổi khuôn mặt, tóc, trang phục, màu sắc hoặc tỷ lệ cơ thể khi nâng cấp hoạt ảnh.
+
+Cho phép giáo viên chọn nhân vật.
+
+## 3. Tám nhóm động tác
+
+Phải triển khai đủ 8 nhóm:
+
+1. Động tác cổ.
+2. Động tác vai.
+3. Động tác khuỷu tay và cánh tay.
+4. Động tác xoay cổ tay.
+5. Động tác thân và eo.
+6. Động tác hông.
+7. Động tác đầu gối và chân.
+8. Động tác cổ chân.
+
+Mỗi nhóm có nhiều bài tập khác nhau.
+
+Giáo viên được quyền:
+
+- Chọn một hoặc nhiều nhóm.
+- Chọn số lần thực hiện.
+- Chọn câu hỏi tương ứng.
+- Sắp xếp thứ tự.
+- Điều chỉnh độ khó.
+- Thiết lập thời gian.
+- Điều chỉnh số lần vận động.
+
+Không cố định số câu hỏi hoặc số lần vận động trong mã nguồn.
+
+## 4. Hệ thống hoạt ảnh nhân vật
+
+Đây là phần quan trọng nhất.
+
+Sử dụng Skeleton, Rigging và hệ thống điều khiển khớp phù hợp với nhân vật hiện có.
+
+Nếu nhân vật 2D:
+
+- Sử dụng 2D Bone Rigging.
+- Điều khiển các khớp độc lập.
+
+Nếu nhân vật 3D:
+
+- Sử dụng 3D Skeleton.
+- Kết hợp IK/FK phù hợp.
+
+Các khớp phải được điều khiển riêng:
+
+- Đầu và cổ.
+- Cột sống.
+- Vai trái và phải.
+- Khuỷu tay.
+- Cổ tay.
+- Hông.
+- Đầu gối.
+- Cổ chân.
+
+Hoạt ảnh phải có:
+
+- Tư thế bắt đầu.
+- Tư thế thực hiện.
+- Tư thế kết thúc.
+- Chuyển động chuyển tiếp.
+- Tốc độ phù hợp.
+- Số lần lặp lại.
+
+Không để tay chân xuyên qua cơ thể.
+
+Không làm nhân vật mất thăng bằng.
+
+Không sử dụng một chuyển động xoay toàn thân để giả lập tất cả động tác.
+
+Nếu tài nguyên nhân vật hiện tại không hỗ trợ rigging, hãy kiểm tra và xây dựng phương án phù hợp, không tuyên bố có hoạt ảnh xương thật khi chỉ sử dụng ảnh tĩnh.
+
+## 5. Cơ chế câu hỏi
+
+Hỗ trợ:
+
+- Trắc nghiệm nhiều lựa chọn.
+- Trả lời ngắn.
+
+Mỗi câu hỏi có:
+
+- Nội dung.
+- Đáp án.
+- Gợi ý.
+- Nhóm động tác.
+- Số lần vận động.
+- Thời gian trả lời.
+- Điểm thưởng.
+
+Thời gian mặc định có thể là 120 giây nhưng giáo viên được quyền thay đổi.
+
+Khi trả lời đúng:
+
+- Hiển thị lời chúc mừng.
+- Kích hoạt động tác tương ứng.
+- Thực hiện đúng số lần.
+- Phát âm thanh tích cực.
+- Cộng điểm.
+
+Khi trả lời sai:
+
+- Hiển thị thông báo nhẹ nhàng.
+- Có thể cho phép thử lại.
+- Hiển thị gợi ý nếu được bật.
+- Không làm học sinh cảm thấy xấu hổ.
+
+## 6. Quản lý trò chơi cho giáo viên
+
+Tạo khu vực Quản lý Thể Dục Trí Tuệ.
+
+Giáo viên được phép:
+
+- Upload hình ảnh nhân vật.
+- Upload tài nguyên.
+- Chọn nhân vật nam/nữ.
+- Xem trước hoạt ảnh.
+- Chọn 8 nhóm động tác.
+- Tạo câu hỏi.
+- Gắn câu hỏi với động tác.
+- Chỉnh số lần vận động.
+- Chỉnh thời gian.
+- Sắp xếp câu hỏi.
+- Nhân bản câu hỏi.
+- Lưu bản nháp.
+- Xuất bản.
+- Chỉnh sửa hoặc xóa nội dung.
+
+Có bản xem trước hoạt ảnh trực tiếp trước khi xuất bản.
+
+## 7. Phân bổ theo lớp
+
+Phải hỗ trợ đầy đủ:
+
+- 6A5.
+- 7A5.
+- 8A5.
+- 9A5.
+
+Mỗi lớp có nội dung và độ khó riêng.
+
+Giáo viên có thể sao chép trò chơi giữa các lớp.
+
+Học sinh chỉ truy cập nội dung phù hợp quyền được cấp.
+
+---
+
+# PHẦN C. HỆ THỐNG GIẢI ĐỐ HÌNH ẢNH – ĐOÁN HÌNH ẢNH
+
+## 1. Mục tiêu trò chơi
+
+Xây dựng trò chơi quan sát và giải đố thông qua hình ảnh.
+
+Học sinh xem hình ảnh, đọc câu hỏi, sử dụng gợi ý và tìm ra đáp án.
+
+Nội dung phải gắn với kiến thức THCS.
+
+Các chủ đề:
+
+- Toán học.
+- Ngữ văn.
+- Lịch sử.
+- Địa lí.
+- Khoa học tự nhiên.
+- Tin học.
+- Văn hóa Việt Nam.
+- Văn học và truyền thuyết Việt Nam.
+
+## 2. Giao diện học sinh
+
+Mỗi màn chơi gồm:
+
+- Hình ảnh câu đố.
+- Tên thử thách.
+- Nội dung câu hỏi.
+- Ba cấp độ gợi ý.
+- Ô nhập đáp án.
+- Nút GỬI ĐÁP ÁN.
+- Nút XEM GỢI Ý.
+- Đồng hồ đếm ngược.
+- Điểm hiện tại.
+- Số lượt trả lời còn lại.
+
+Cho phép phóng to hình ảnh toàn màn hình.
+
+Ảnh phải rõ nét, không bị méo hoặc cắt mất chi tiết quan trọng.
+
+## 3. Cơ chế giải đố
+
+Khi trả lời đúng:
+
+- Hiển thị thông báo chính xác.
+- Có hiệu ứng khám phá.
+- Cộng điểm.
+- Hiển thị lời giải thích.
+- Chuyển sang câu tiếp theo nếu còn câu hỏi.
+
+Khi trả lời sai:
+
+- Hiển thị thông báo chưa chính xác.
+- Cho phép thử lại theo cấu hình.
+- Có thể mở gợi ý.
+- Không tự động tiết lộ đáp án nếu giáo viên không cho phép.
+
+## 4. Hệ thống đáp án
+
+Hỗ trợ:
+
+- Đáp án có dấu tiếng Việt.
+- Đáp án không dấu.
+- Các cách viết tương đương.
+- Từ đồng nghĩa được giáo viên khai báo.
+- Tên tiếng Anh nếu có.
+
+Chuẩn hóa khoảng trắng, chữ hoa, chữ thường và dấu tiếng Việt trước khi kiểm tra.
+
+Không tự ý chấp nhận các đáp án sai chỉ vì gần giống đáp án đúng.
+
+Đáp án phải được đối chiếu với dữ liệu mà giáo viên đã thiết lập.
+
+## 5. Quản lý câu đố dành cho giáo viên
+
+Tạo khu vực Quản lý Giải Đố Hình Ảnh.
+
+Giáo viên được phép:
+
+- Upload ảnh.
+- Nhập link ảnh.
+- Đặt tên câu đố.
+- Nhập nội dung.
+- Nhập đáp án.
+- Thêm từ đồng nghĩa.
+- Thêm 3 cấp độ gợi ý.
+- Thiết lập số lượt thử.
+- Thiết lập thời gian.
+- Thiết lập điểm thưởng.
+- Xem trước.
+- Lưu bản nháp.
+- Xuất bản.
+- Chỉnh sửa.
+- Xóa.
+- Nhân bản câu đố.
+
+Hỗ trợ PNG, JPG và WEBP.
+
+Kiểm tra dung lượng, định dạng và tính an toàn của tệp tải lên.
+
+Không để hình ảnh lỗi hoặc liên kết không tồn tại.
+
+## 6. Phân phối nội dung
+
+Hỗ trợ:
+
+- Lớp 6A5.
+- Lớp 7A5.
+- Lớp 8A5.
+- Lớp 9A5.
+
+Mỗi lớp có ngân hàng câu đố riêng.
+
+Có chức năng sao chép câu đố từ lớp này sang lớp khác.
+
+Giáo viên được quyền quản lý các lớp được phân công.
+
+---
+
+# PHẦN D. HÌNH ẢNH ĐẠI DIỆN CỦA BA TRÒ CHƠI
+
+Chỉ sử dụng hình ảnh phù hợp với môi trường giáo dục THCS.
+
+Ưu tiên phong cách nhiếp ảnh chân thực, tự nhiên, chất lượng cao.
+
+Giữ nguyên tỷ lệ khung hình 16:9.
+
+### 1. Thể Dục Trí Tuệ
+
+Hình ảnh nhóm học sinh THCS Việt Nam mặc đồng phục thể thao đang cùng nhau vận động trên sân trường.
+
+Bối cảnh:
+
+- Sân trường xanh sạch đẹp.
+- Ánh sáng tự nhiên.
+- Học sinh đang khởi động, chạy bộ hoặc tập thể dục.
+- Không khí vui vẻ và năng động.
+
+Không dùng hình ảnh người trưởng thành tập gym hoặc vận động viên thể hình.
+
+### 2. Giải Đố Hình Ảnh
+
+Hình ảnh kính lúp đang quan sát chiếc bút trên bàn học.
+
+Bối cảnh:
+
+- Bàn học gỗ.
+- Sổ tay.
+- Sách.
+- Ánh sáng tự nhiên.
+- Bố cục nhấn mạnh khả năng quan sát.
+
+Phong cách nhiếp ảnh tĩnh vật chân thực.
+
+### 3. Đấu Trường Trí Tuệ
+
+Hình ảnh đấu trường Colosseum cổ đại.
+
+Yêu cầu:
+
+- Kiến trúc lịch sử chân thực.
+- Vòm đá cổ đại rõ nét.
+- Ánh sáng tự nhiên.
+- Không gian hoành tráng.
+- Tinh thần lịch sử và tranh tài.
+
+Không sử dụng phòng game neon, casino hoặc hình ảnh game bạo lực.
+
+### Yêu cầu kỹ thuật hình ảnh
+
+- Ảnh được lưu trong assets của dự án.
+- Không phụ thuộc vào đường dẫn ảnh tạm thời.
+- Không thay đổi kích thước thẻ.
+- Không làm méo hình.
+- Không làm thay đổi bố cục website.
+- Kiểm tra tất cả đường dẫn ảnh.
+
+---
+
+# PHẦN E. HỆ THỐNG ĐIỂM, PHẦN THƯỞNG VÀ THỐNG KÊ DÙNG CHUNG
+
+Ba trò chơi phải kết nối với cùng một hệ thống hồ sơ học sinh.
+
+Mỗi học sinh có một ID duy nhất.
+
+Các thông tin được đồng bộ:
+
+- Họ tên.
+- Lớp.
+- Avatar.
+- RP.
+- EXP.
+- Vàng.
+- Cấp độ.
+- Huy hiệu.
+- Thành tích.
+- Lịch sử chơi.
+
+### 1. Ghi nhận kết quả
+
+Đấu Trường Trí Tuệ:
+
+- Trận PVP.
+- Kết quả thắng/thua.
+- Boss đã tiêu diệt.
+- Nhiệm vụ Solo.
+- RP.
+- EXP.
+- Vàng.
+
+Thể Dục Trí Tuệ:
+
+- Số câu đúng.
+- Số câu sai.
+- Số động tác hoàn thành.
+- Tổng điểm.
+- Thời gian.
+
+Giải Đố Hình Ảnh:
+
+- Số câu đúng.
+- Số câu sai.
+- Số gợi ý đã sử dụng.
+- Tổng điểm.
+- Thời gian hoàn thành.
+
+### 2. Quy tắc tính điểm
+
+- Điểm được tính theo cấu hình hợp lệ.
+- Không tự tạo điểm.
+- Không cộng thưởng hai lần.
+- Không cho phép học sinh tự chỉnh sửa kết quả.
+- Phần thưởng phải được máy chủ xác nhận.
+- Có lịch sử giao dịch điểm.
+
+### 3. Bảng thống kê giáo viên
+
+Cho phép xem:
+
+- Theo lớp.
+- Theo học sinh.
+- Theo trò chơi.
+- Theo thời gian.
+- Theo điểm số.
+- Theo số lượt tham gia.
+
+Không công khai dữ liệu riêng tư của học sinh cho người không có quyền truy cập.
+
+---
+
+# PHẦN F. KIẾN TRÚC KỸ THUẬT VÀ BẢO MẬT
+
+## 1. Kiểm tra mã nguồn hiện tại
+
+Ưu tiên kiểm tra các tệp đã được sử dụng trong dự án:
+
+Đấu Trường Trí Tuệ:
+
+- src/components/arena/DauTruongTriTueGame.tsx
+- src/components/arena/PvpArenaMode.tsx
+- src/components/arena/BossCoopMode.tsx
+- src/components/arena/CampaignBattle.tsx
+- src/components/arena/ArenaProfileModal.tsx
+- src/components/arena/ArenaLeaderboard.tsx
+- src/components/arena/WarriorRegisterModal.tsx
+- src/data/arenaBosses.ts
+
+Thể Dục Trí Tuệ:
+
+- src/components/games/HumanoidExerciseAvatar.tsx
+- src/components/games/TheDucTriTueGame.tsx
+- src/data/theDucTriTueData.ts
+- src/components/teacher/TheDucTriTueManager.tsx
+
+Giải Đố Hình Ảnh:
+
+- src/components/games/GiaiDoHinhAnhGame.tsx
+- src/data/giaiDoHinhAnhData.ts
+- src/components/teacher/GiaiDoHinhAnhManager.tsx
+
+Các khu vực dùng chung:
+
+- src/context/AppContext.tsx
+- src/components/teacher/TeacherDashboard.tsx
+- src/pages/GamesPage.tsx
+- server.ts
+
+Đây là danh sách tệp tham chiếu từ những lần triển khai trước. Nếu cấu trúc hiện tại khác, hãy tìm đúng tệp thực tế thay vì tạo bản sao.
+
+## 2. Backend và Database
+
+Kiểm tra các API đang có.
+
+Tái sử dụng hệ thống xác thực hiện tại.
+
+Tất cả dữ liệu quan trọng phải được lưu bền vững:
+
+- Tài khoản.
+- Hồ sơ chiến binh.
+- Danh sách tướng.
+- Danh sách Boss.
+- Tiến trình mở khóa.
+- Phòng đấu.
+- Kết quả PVP.
+- Kết quả Co-op.
+- Câu hỏi.
+- Đáp án.
+- Điểm.
+- Phần thưởng.
+- Lịch sử hoạt động.
+
+Không chỉ lưu dữ liệu quan trọng trong state hoặc localStorage.
+
+## 3. Bảo mật
+
+- Kiểm tra quyền truy cập ở backend.
+- Xác thực ID tài khoản.
+- Không cho phép sửa điểm từ trình duyệt.
+- Không cho phép giả mạo tài khoản.
+- Không cho phép nhận thưởng nhiều lần.
+- Không cho phép sửa kết quả trận đấu.
+- Không tiết lộ mật khẩu và thông tin nhạy cảm.
+- Ghi nhật ký những thay đổi quan trọng.
+
+## 4. Chống lỗi và đồng bộ
+
+Xử lý:
+
+- Người chơi mất kết nối.
+- Người chơi tải lại trang.
+- Người chơi chuyển thiết bị.
+- Trận đấu bị gián đoạn.
+- Nhiều người chơi cùng gửi đáp án.
+- Hai người cùng nhận lời mời.
+- Phòng Boss không đủ người.
+- Dữ liệu câu hỏi bị thiếu.
+- Tài nguyên hình ảnh bị lỗi.
+
+Các kết quả và phần thưởng phải được xác nhận bằng backend.
+
+---
+
+# PHẦN G. KIỂM THỬ BẮT BUỘC
+
+Không được chỉ kiểm tra giao diện. Phải kiểm thử toàn bộ luồng hoạt động.
+
+## 1. Kiểm thử Đấu Trường Trí Tuệ
+
+- Đăng ký tài khoản chiến binh.
+- Chọn lớp 6A5, 7A5, 8A5, 9A5.
+- Chọn đủ 50 tướng.
+- Vào được PVP 1vs1.
+- Hai tài khoản thật nhìn thấy nhau.
+- Gửi lời mời.
+- Chấp nhận lời mời.
+- Chọn tướng.
+- Chọn đấu trường.
+- Bắt đầu trận đấu.
+- Trả lời 5 lượt.
+- Tính kết quả Best of 5.
+- Nhận thưởng.
+- Lưu lịch sử.
+
+Kiểm thử Boss:
+
+- Hiển thị đủ 50 Boss.
+- Boss được mở khóa đúng thứ tự.
+- HP tối đa không vượt 150.000.
+- Boss càng về sau càng mạnh.
+- Đội có 2 người không được bắt đầu.
+- Đội có ít nhất 3 người được phép bắt đầu.
+- HP Boss đồng bộ giữa các thành viên.
+- Khi Boss bị tiêu diệt, ghi nhận kết quả.
+- Không nhận thưởng trùng.
+
+## 2. Kiểm thử Thể Dục Trí Tuệ
+
+- Chọn nhân vật nam.
+- Chọn nhân vật nữ.
+- Kiểm tra đủ 8 nhóm động tác.
+- Kiểm tra từng khớp cơ thể.
+- Kiểm tra số lần lặp lại.
+- Trả lời đúng.
+- Trả lời sai.
+- Hết giờ.
+- Kiểm tra điểm.
+- Giáo viên tạo câu hỏi.
+- Giáo viên sửa câu hỏi.
+- Giáo viên xuất bản.
+- Học sinh của cả 4 lớp truy cập được.
+
+## 3. Kiểm thử Giải Đố Hình Ảnh
+
+- Upload ảnh.
+- Hiển thị ảnh.
+- Phóng to ảnh.
+- Hiển thị gợi ý.
+- Nhập đáp án có dấu.
+- Nhập đáp án không dấu.
+- Kiểm tra từ đồng nghĩa.
+- Trả lời đúng.
+- Trả lời sai.
+- Hết giờ.
+- Cộng điểm.
+- Chuyển câu tiếp theo.
+- Giáo viên tạo và xuất bản câu đố.
+- Cả 4 lớp truy cập được đúng nội dung.
+
+## 4. Kiểm thử toàn website
+
+- Không phát sinh lỗi TypeScript.
+- Không phát sinh lỗi React.
+- Không phát sinh lỗi API.
+- Không mất dữ liệu cũ.
+- Không có ảnh lỗi.
+- Không có nút bấm vô tác dụng.
+- Không có trang trắng.
+- Không có dữ liệu giả.
+- Không làm hỏng chức năng đăng nhập.
+- Không làm hỏng trang chủ.
+- Không làm hỏng thanh điều hướng.
+- Hiển thị tốt trên máy tính, máy tính bảng và điện thoại.
+
+---
+
+# PHẦN H. QUY TRÌNH THỰC HIỆN VÀ BÁO CÁO
+
+Hãy thực hiện theo thứ tự:
+
+**Giai đoạn 1: Kiểm tra**
+
+Đọc mã nguồn, kiểm tra các component, API, database và dữ liệu hiện tại.
+
+**Giai đoạn 2: Lập kế hoạch**
+
+Phân loại:
+- Chức năng đã hoạt động.
+- Chức năng chưa hoàn thiện.
+- Chức năng bị lỗi.
+- Chức năng cần bổ sung.
+
+**Giai đoạn 3: Triển khai**
+
+Thực hiện lần lượt từng module.
+
+Ưu tiên sửa lỗi truy cập PVP trước, sau đó hoàn thiện hệ thống Boss, Thể Dục Trí Tuệ và Giải Đố Hình Ảnh.
+
+Không chỉnh sửa tràn lan các tệp không liên quan.
+
+**Giai đoạn 4: Kiểm thử**
+
+Chạy kiểm tra TypeScript:
+
+`npx tsc --noEmit`
+
+Chạy build:
+
+`npm run build`
+
+Khởi động lại Dev Server và kiểm tra các API cần thiết.
+
+Nếu Dev Server không khởi động, hãy đọc log lỗi thực tế, xác định nguyên nhân và sửa đúng lỗi.
+
+Không tự ý đổi cổng, tắt HMR hoặc vô hiệu hóa tính năng chỉ để che giấu lỗi.
+
+**Giai đoạn 5: Báo cáo**
+
+Sau khi hoàn thành, báo cáo rõ:
+
+1. Những tệp đã chỉnh sửa.
+2. Những chức năng đã hoàn thành.
+3. Những chức năng đã kiểm thử thành công.
+4. Những chức năng còn thiếu.
+5. Những lỗi chưa thể khắc phục.
+6. Những dữ liệu cần giáo viên bổ sung.
+7. Trạng thái Dev Server và Build.
+
+Không được tuyên bố hoàn thành 100% nếu chưa kiểm tra được chức năng thực tế.
+
+---
+
+# PHẦN I. NHỮNG ĐIỀU TUYỆT ĐỐI KHÔNG ĐƯỢC VI PHẠM
+
+1. Không tạo website mới.
+2. Không xóa các trò chơi đang hoạt động.
+3. Không xóa dữ liệu học sinh.
+4. Không tạo người chơi ảo.
+5. Không tạo điểm số giả.
+6. Không tạo tài khoản thử nghiệm để thay thế tài khoản thật.
+7. Không tự ý thay đổi tên ba trò chơi.
+8. Không thay đổi giao diện tổng thể khi không cần thiết.
+9. Không thay đổi 8 nhóm vận động.
+10. Không tự ý thay đổi danh sách tướng đã có.
+11. Không xóa 30 Boss đã được định nghĩa.
+12. Không bỏ qua yêu cầu 50 Boss.
+13. Không cho phép đánh Boss khi đội chưa đủ 3 người.
+14. Không để PVP 1vs1 tiếp tục ở trạng thái không truy cập được.
+15. Không làm mất dữ liệu khi chuyển trang hoặc tải lại.
+16. Không chỉ làm giao diện mà bỏ qua Backend.
+17. Không báo thành công khi chưa kiểm thử.
+18. Không sửa những chức năng ngoài phạm vi ba trò chơi nếu không thực sự cần thiết.
+
+# KẾT QUẢ CUỐI CÙNG
+
+Hoàn thiện một hệ sinh thái gồm ba trò chơi có liên kết dữ liệu chặt chẽ:
+
+**1. ĐẤU TRƯỜNG TRÍ TUỆ**
+
+Học sinh được lựa chọn 50 vị tướng, thi đấu PVP 1vs1, chiến đấu trong thế giới kỳ ảo của văn học Việt Nam, lập tổ đội từ 3 người trở lên để săn 50 Đại Boss, tham gia thử thách Solo và cạnh tranh trên bảng xếp hạng.
+
+**2. THỂ DỤC TRÍ TUỆ**
+
+Học sinh vừa học kiến thức vừa vận động thông qua 8 nhóm động tác, nhân vật có chuyển động khớp tự nhiên và hệ thống câu hỏi do giáo viên thiết kế.
+
+**3. GIẢI ĐỐ HÌNH ẢNH**
+
+Học sinh quan sát hình ảnh, sử dụng gợi ý, suy luận và khám phá kiến thức thông qua những thử thách trực quan.
+
+Cả ba trò chơi đều sử dụng chung tài khoản học sinh, hồ sơ, lớp học, điểm thưởng và hệ thống thống kê.
+
+**THÔNG ĐIỆP CHUNG:**
+
+HỌC ĐỂ KHÁM PHÁ – CHƠI ĐỂ TRƯỞNG THÀNH – VẬN ĐỘNG ĐỂ KHỎE MẠNH – THI ĐẤU ĐỂ TỎA SÁNG!
+
+**YÊU CẦU CUỐI CÙNG:** Hãy ưu tiên độ chính xác của dữ liệu, tính ổn định của hệ thống và chức năng hoạt động thực tế. Kiểm tra trước khi sửa, sửa đúng phạm vi, kiểm thử sau mỗi giai đoạn và bảo toàn toàn bộ những thành phần đang hoạt động tốt của website THCS MỸ HÒA.

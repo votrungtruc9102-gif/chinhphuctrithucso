@@ -1,0 +1,85 @@
+{
+  "entities": {
+    "Textbook": {
+      "title": "Textbook",
+      "description": "Sách giáo khoa điện tử các môn học và khối lớp ",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Mã định danh duy nhất của sách giáo khoa",
+          "maxLength": 128
+        },
+        "grade": {
+          "type": ["number", "string"],
+          "description": "Khối lớp (6, 7, 8, 9 hoặc 'all')"
+        },
+        "subjectId": {
+          "type": "string",
+          "description": "Mã môn học",
+          "maxLength": 64
+        },
+        "subjectName": {
+          "type": "string",
+          "description": "Tên môn học",
+          "maxLength": 128
+        },
+        "bookSet": {
+          "type": "string",
+          "description": "Bộ sách giáo khoa",
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "description": "Tên sách giáo khoa",
+          "maxLength": 255
+        },
+        "bookUrl": {
+          "type": "string",
+          "description": "Đường link URL sách giáo khoa đầy đủ bảo toàn 100% nguyên vẹn",
+          "maxLength": 2048
+        },
+        "embedUrl": {
+          "type": "string",
+          "description": "Đường link nhúng nếu có",
+          "maxLength": 2048
+        },
+        "coverUrl": {
+          "type": "string",
+          "description": "URL ảnh bìa sách",
+          "maxLength": 2048
+        },
+        "description": {
+          "type": "string",
+          "description": "Mô tả nội dung sách giáo khoa",
+          "maxLength": 4096
+        },
+        "status": {
+          "type": "string",
+          "description": "Trạng thái hiển thị (published hoặc hidden)",
+          "enum": ["published", "hidden"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Thời gian tạo bản ghi"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Thời gian cập nhật gần nhất"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "Người tạo hoặc cập nhật bản ghi",
+          "maxLength": 128
+        }
+      },
+      "required": ["id", "grade", "subjectId", "title", "bookUrl", "status"]
+    }
+  },
+  "firestore": {
+    "/textbooks/{textbookId}": {
+      "schema": "Textbook",
+      "description": "Kho lưu trữ dữ liệu sách giáo khoa vĩnh viễn"
+    }
+  }
+}

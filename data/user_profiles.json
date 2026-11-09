@@ -1,0 +1,36 @@
+{
+  "stu_1794042653951_8j6jc": {
+    "uid": "stu_1794042653951_8j6jc",
+    "username": "mh-khi9-7462",
+    "displayName": "Nguyen Le Anh Kiet",
+    "className": "KHỐI 9",
+    "grade": 9,
+    "accountCode": "MH-KHI9-7462",
+    "avatarEmoji": "🧑‍🎓",
+    "favoriteCharacterId": "char_1",
+    "title": "Tân Thủ Tri Thức",
+    "rp": 2200,
+    "exp": 1500,
+    "wins": 0,
+    "losses": 0,
+    "winStreak": 0,
+    "updatedAt": "2026-11-07T09:14:20.395Z"
+  },
+  "stu_1794043396051_966v3": {
+    "uid": "stu_1794043396051_966v3",
+    "username": "mh-6a1-8163",
+    "displayName": "Học Sinh Thử Nghiệm",
+    "className": "6A1",
+    "grade": 6,
+    "accountCode": "MH-6A1-8163",
+    "avatarEmoji": "🧑‍🎓",
+    "favoriteCharacterId": "char_1",
+    "title": "Tân Thủ Tri Thức",
+    "rp": 1200,
+    "exp": 100,
+    "wins": 0,
+    "losses": 0,
+    "winStreak": 0,
+    "updatedAt": "2026-11-07T09:23:16.051Z"
+  }
+}

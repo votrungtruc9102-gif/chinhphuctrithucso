@@ -1,0 +1,126 @@
+[
+  {
+    "uid": "stu_1794043396051_966v3",
+    "accountCode": "MH-6A1-8163",
+    "displayName": "Học Sinh Thử Nghiệm",
+    "className": "6A1",
+    "grade": 6,
+    "avatarEmoji": "🧑‍🎓",
+    "recoveryCode": "749420",
+    "rp": 1250,
+    "totalPoints": 50,
+    "exp": 200,
+    "wins": 0,
+    "losses": 0,
+    "winStreak": 0,
+    "bossDefeatedCount": 0,
+    "unlockedBossIds": [
+      "boss_1"
+    ],
+    "maxUnlockedArenaStage": 1,
+    "unlockedTitles": [
+      "Tân Thủ Tri Thức"
+    ],
+    "unlockedBadges": [
+      "badge_welcome"
+    ],
+    "ownedCharacterIds": [
+      "char_1",
+      "char_2"
+    ],
+    "favoriteCharacterId": "char_1",
+    "createdAt": "2026-11-07T09:23:16.051Z",
+    "lastActive": "2026-11-07T09:23:25.067Z",
+    "gameHistory": [
+      {
+        "gameType": "Thử tài kiến thức",
+        "result": "Hoàn thành thử thách",
+        "scoreChange": 50,
+        "timestamp": "2026-11-07T09:23:25.067Z",
+        "details": "[tx_verify_1] Hoàn thành 6 chặng (+50 điểm)"
+      },
+      {
+        "gameType": "register",
+        "result": "Tạo tài khoản thành công",
+        "scoreChange": 0,
+        "timestamp": "2026-11-07T09:23:16.051Z",
+        "details": "Gia nhập hệ sinh thái với mã MH-6A1-8163"
+      }
+    ],
+    "isArchived": true,
+    "archivedAt": "2026-11-07T09:23:40.751Z"
+  },
+  {
+    "uid": "stu_1794042653951_8j6jc",
+    "accountCode": "MH-KHI9-7462",
+    "displayName": "Nguyen Le Anh Kiet",
+    "className": "KHỐI 9",
+    "grade": 9,
+    "avatarEmoji": "🧑‍🎓",
+    "recoveryCode": "237021",
+    "rp": 2200,
+    "totalPoints": 100,
+    "exp": 1500,
+    "wins": 0,
+    "losses": 0,
+    "winStreak": 0,
+    "bossDefeatedCount": 3,
+    "unlockedBossIds": [
+      "boss_1",
+      "boss_9_1",
+      "boss_9_13",
+      "boss_9_12"
+    ],
+    "maxUnlockedArenaStage": 1,
+    "unlockedTitles": [
+      "Tân Thủ Tri Thức"
+    ],
+    "unlockedBadges": [
+      "badge_welcome"
+    ],
+    "ownedCharacterIds": [
+      "char_1",
+      "char_2"
+    ],
+    "favoriteCharacterId": "char_1",
+    "createdAt": "2026-11-07T09:10:53.951Z",
+    "lastActive": "2026-11-07T09:14:20.395Z",
+    "gameHistory": [
+      {
+        "gameType": "boss_raid",
+        "result": "Hoàn thành",
+        "scoreChange": 250,
+        "timestamp": "2026-11-07T09:14:20.395Z",
+        "details": ""
+      },
+      {
+        "gameType": "boss_raid",
+        "result": "Hoàn thành",
+        "scoreChange": 250,
+        "timestamp": "2026-11-07T09:14:05.822Z",
+        "details": ""
+      },
+      {
+        "gameType": "boss_raid",
+        "result": "Hoàn thành",
+        "scoreChange": 250,
+        "timestamp": "2026-11-07T09:14:03.038Z",
+        "details": ""
+      },
+      {
+        "gameType": "boss_raid",
+        "result": "Hoàn thành",
+        "scoreChange": 250,
+        "timestamp": "2026-11-07T09:13:53.867Z",
+        "details": ""
+      },
+      {
+        "gameType": "register",
+        "result": "Tạo tài khoản thành công",
+        "scoreChange": 0,
+        "timestamp": "2026-11-07T09:10:53.951Z",
+        "details": "Gia nhập hệ sinh thái với mã MH-KHI9-7462"
+      }
+    ]
+  }
+]
